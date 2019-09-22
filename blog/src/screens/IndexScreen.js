@@ -5,11 +5,13 @@ import { Feather } from '@expo/vector-icons'
 
 const IndexScreen = ({ navigation }) => {
   const { state, deleteBlogPost } = useContext(Context)
+
+  console.log('state =', state)
   return (
     <View>
       <FlatList
         data={state}
-        keyExtractor={(blogPost) => blogPost.title}
+        keyExtractor={blogPost => blogPost.title}
         renderItem={({ item }) => {
           return (
             <TouchableOpacity
@@ -24,12 +26,12 @@ const IndexScreen = ({ navigation }) => {
                 </TouchableOpacity>
               </View>
             </TouchableOpacity>
-          )
+          );
         }}
       />
     </View>
-  )
-}
+  );
+};
 
 IndexScreen.navigationOptions = ({ navigation }) => {
   return {

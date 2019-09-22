@@ -7,19 +7,19 @@ const BlogPostForm = ({ onSubmit, initialValues }) => {
 
   return (
     <View>
-      <Text style={styles.lable} >Enter Title:</Text>
-      <TextInput style={styles.input} value={title} onChangeText={(text) => setTitle(text)}/>
-      <Text style={styles.lable}>Enter Content</Text>
+      <Text style={styles.label}>Enter Title:</Text>
+      <TextInput
+        style={styles.input}
+        value={title}
+        onChangeText={text => setTitle(text)}
+      />
+      <Text style={styles.label}>Enter Content:</Text>
       <TextInput
         style={styles.input}
         value={content}
-        onChangeText={(text) => setContent(text)}
+        onChangeText={text => setContent(text)}
       />
-      <TextInput />
-      <Button
-        title="Save Blog Post"
-        onPress={() => onSubmit(title, content)}
-      />
+      <Button title="Save Blog Post" onPress={() => onSubmit(title, content)} />
     </View>
   )
 }
